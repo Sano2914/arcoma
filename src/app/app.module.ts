@@ -25,7 +25,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 // import { SalesModule } from './modules/sales/sales.module';
 // import { CategoryModule } from './modules/category/category.module';
 import { UserModule } from './modules/user/user.module';
-// import { CustomerModule } from './modules/customer/customer.module';
+import { CustomerModule } from './modules/customer/customer.module';
 // import { SettingsModule } from './modules/settings/settings.module';
 
 const appRoutes: Routes = [
@@ -53,10 +53,10 @@ const appRoutes: Routes = [
     path: 'user',
     loadChildren: () => UserModule
   },
-  // {
-  //   path: 'customer',
-  //   loadChildren: () => CustomerModule
-  // },
+  {
+    path: 'customer',
+    loadChildren: () => CustomerModule
+  },
   // {
   //   path: 'settings',
   //   loadChildren: () => SettingsModule
