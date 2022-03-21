@@ -20,9 +20,9 @@ import { coreConfig } from 'app/app-config';
 
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
-// import { ProductsModule } from './modules/products/products.module';
+import { ProductsModule } from './modules/products/products.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
-// import { SalesModule } from './modules/sales/sales.module';
+import { SalesModule } from './modules/sales/sales.module';
 // import { CategoryModule } from './modules/category/category.module';
 import { UserModule } from './modules/user/user.module';
 import { CustomerModule } from './modules/customer/customer.module';
@@ -37,14 +37,14 @@ const appRoutes: Routes = [
     path: 'dashboard',
     loadChildren: () => DashboardModule
   },
-  // {
-  //   path: 'product',
-  //   loadChildren: () => ProductsModule
-  // },
-  // {
-  //   path: 'sales',
-  //   loadChildren: () => SalesModule
-  // },
+  {
+    path: 'product',
+    loadChildren: () => ProductsModule
+  },
+  {
+    path: 'sales',
+    loadChildren: () => SalesModule
+  },
   // {
   //   path: 'category',
   //   loadChildren: () => CategoryModule
