@@ -7,9 +7,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerCreateService implements Resolve<any> {
+export class TicketsCreateService implements Resolve<any> {
   public apiData: any;
-  public onCustomerEditChanged: BehaviorSubject<any>;
+  public onTicketEditChanged: BehaviorSubject<any>;
 
   /**
    * Constructor
@@ -18,9 +18,8 @@ export class CustomerCreateService implements Resolve<any> {
    */
    constructor(private _httpClient: HttpClient) {
     // Set the defaults
-    this.onCustomerEditChanged = new BehaviorSubject({});
+    this.onTicketEditChanged = new BehaviorSubject({});
   }
-
   /**
    * Resolver
    *
@@ -28,7 +27,7 @@ export class CustomerCreateService implements Resolve<any> {
    * @param {RouterStateSnapshot} state
    * @returns {Observable<any> | Promise<any> | any}
    */
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     return new Promise<void>((resolve, reject) => {
       Promise.all([this.getApiData()]).then(() => {
         resolve();
@@ -43,7 +42,7 @@ export class CustomerCreateService implements Resolve<any> {
     return new Promise((resolve, reject) => {
       this._httpClient.get('api/users-data').subscribe((response: any) => {
         this.apiData = response;
-        this.onCustomerEditChanged.next(this.apiData);
+        this.onTicketEditChanged.next(this.apiData);
         resolve(this.apiData);
       }, reject);
     });

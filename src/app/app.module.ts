@@ -27,6 +27,7 @@ import { SalesModule } from './modules/sales/sales.module';
 import { UserModule } from './modules/user/user.module';
 import { CustomerModule } from './modules/customer/customer.module';
 // import { SettingsModule } from './modules/settings/settings.module';
+import { TicketsModule } from './modules/tickets/tickets.module';
 
 const appRoutes: Routes = [
   {
@@ -62,6 +63,10 @@ const appRoutes: Routes = [
   //   loadChildren: () => SettingsModule
   // },
   {
+    path: 'tickets',
+    loadChildren: () => TicketsModule
+  },
+  {
     path: '',
     redirectTo: '/dashboard',
     pathMatch: 'full'
@@ -73,7 +78,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

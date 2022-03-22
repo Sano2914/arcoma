@@ -23,43 +23,43 @@ export class UserListComponent implements OnInit {
   public rows = [
     {
       id: '101',
-      fullName: 'Hari',
+      fullName: 'SHAMS',
       address: 'No 20 South Street', 
-      city: 'Chennai',
-      email:'hari101@gmail.com',
-      contact: '1234567890'
+      city: 'DAMMAM',
+      email:'shams@gmail.com',
+      contact: '+96623244223'
     },
     {
       id: '102',
-      fullName: 'Ram',
+      fullName: 'ASFAQ',
       address: 'No 10 West street',
-      city: 'Trichy',
-      email:'ram102@yahoo.com',
-      contact: '9874512368'
+      city: 'JEDDAH',
+      email:'asfaq@yahoo.com',
+      contact: '+96623244223'
     },
     {
       id: '103',
-      fullName: 'Priya',
+      fullName: 'MOHAMMED',
       address: 'No 23 Middle Street',
-      city: 'Chennai',
-      email:'priya103@gmail.com',
-      contact: '7854123069'
+      city: 'RIYADH',
+      email:'mohammed@gmail.com',
+      contact: '+96623244223'
     },
     {
       id: '104',
-      fullName: 'Kumar',
+      fullName: 'AZAR',
       address: 'No 125 Main road',
-      city: 'Trichy',
-      email:'kumar104@hotmail.com',
-      contact: '3541298076'
+      city: 'RIYADH',
+      email:'azar@hotmail.com',
+      contact: '+96623244223'
     },
     {
       id: '105',
-      fullName: 'Anu',
+      fullName: 'OMAR',
       address: 'No 63 South Street',
-      city: 'Madurai',
-      email:'anu105@gmail.com',
-      contact: '8741236950'
+      city: 'DAMMAM',
+      email:'omar@gmail.com',
+      contact: '+96623244223'
     }
 
   ];
@@ -69,11 +69,11 @@ export class UserListComponent implements OnInit {
   public previousStatusFilter = '';
 
   public selectAvailability: any = [
-  { name: 'All', value: '' },
-  { name: 'Chennai', value: 'chennai' },
-  { name: 'Madurai', value: 'madurai' },
-  { name: 'Trichy', value: 'trichy' }
-];
+    { name: 'All', value: '' },
+    { name: 'RIYADH', value: 'riyadh' },
+    { name: 'JEDDAH', value: 'jeddah' },
+    { name: 'DAMMAM', value: 'dammam' }
+  ];
 
   public selectedAvailability = [];
   public searchValue = '';
@@ -83,43 +83,43 @@ export class UserListComponent implements OnInit {
   private tempData = [
     {
       id: '101',
-      fullName: 'Hari',
+      fullName: 'SHAMS',
       address: 'No 20 South Street', 
-      city: 'Chennai',
-      email:'priya103@gmail.com',
-      contact: '1234567890'
+      city: 'DAMMAM',
+      email:'shams@gmail.com',
+      contact: '+96623244223'
     },
     {
       id: '102',
-      fullName: 'Ram',
+      fullName: 'ASFAQ',
       address: 'No 10 West street',
-      city: 'Trichy',
-      email:'ram102@yahoo.com',
-      contact: '9874512368'
+      city: 'JEDDAH',
+      email:'asfaq@yahoo.com',
+      contact: '+96623244223'
     },
     {
       id: '103',
-      fullName: 'Priya',
+      fullName: 'MOHAMMED',
       address: 'No 23 Middle Street',
-      city: 'Chennai',
-      email:'priya103@gmail.com',
-      contact: '7854123069'
+      city: 'RIYADH',
+      email:'mohammed@gmail.com',
+      contact: '+96623244223'
     },
     {
       id: '104',
-      fullName: 'Kumar',
+      fullName: 'AZAR',
       address: 'No 125 Main road',
-      city: 'Trichy',
-      email:'kumar104@hotmail.com',
-      contact: '3541298076'
+      city: 'RIYADH',
+      email:'azar@hotmail.com',
+      contact: '+96623244223'
     },
     {
       id: '105',
-      fullName: 'Anu',
+      fullName: 'OMAR',
       address: 'No 63 South Street',
-      city: 'Madurai',
-      email:'anu105@gmail.com',
-      contact: '8741236950'
+      city: 'DAMMAM',
+      email:'omar@gmail.com',
+      contact: '+96623244223'
     }
   ];
   private _unsubscribeAll: Subject<any>;

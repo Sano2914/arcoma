@@ -30,7 +30,7 @@ export class UserViewComponent implements OnInit {
     {
       id: '101',
       transactionId: '5252525252',
-      clientName: 'Hari',
+      clientName: 'ALUPCO',
       address: {
         addressLine1: 'No 20',
         addressLine2: 'South Street',
@@ -38,16 +38,16 @@ export class UserViewComponent implements OnInit {
         state: 'TamilNadu',
         pincode: '600000'
       },
-      amount: '5000',
-      paymentStatus: 'Paid',
+      amount: '500',
+      paymentStatus: 'CLOSED',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '26-10-1996',
     },
     {
-      id: '102',
+      id: '104',
       transactionId: '5248451526',
-      clientName: 'Ram',
+      clientName: 'ALYAF',
       address: {
         addressLine1: 'No 10',
         addressLine2: 'West Street',
@@ -55,16 +55,16 @@ export class UserViewComponent implements OnInit {
         state: 'TamilNadu',
         pincode: '602025'
       },
-      amount: '10000',
-      paymentStatus: 'Partial Payment',
+      amount: '1000',
+      paymentStatus: 'IN PROGRESS',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '26-1-1997',
     },
     {
-      id: '103',
+      id: '105',
       transactionId: '5252789634',
-      clientName: 'Priya',
+      clientName: 'ARAKAN PAPER CUPS',
       address: {
         addressLine1: 'No 23',
         addressLine2: 'Middle Street',
@@ -72,16 +72,16 @@ export class UserViewComponent implements OnInit {
         state: 'TamilNadu',
         pincode: '600081'
       },
-      amount: '25000',
-      paymentStatus: 'Past Due',
+      amount: '2500',
+      paymentStatus: 'ESCALATED',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '02-07-1996',
     },
     {
-      id: '104',
+      id: '101',
       transactionId: '5252354785',
-      clientName: 'Kumar',
+      clientName: 'ALUPCO',
       address: {
         addressLine1: 'No 125',
         addressLine2: 'Main Road',
@@ -90,15 +90,15 @@ export class UserViewComponent implements OnInit {
         pincode: '600063'
       },
       amount: '3000',
-      paymentStatus: 'Sent',
+      paymentStatus: 'CLOSED',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '06-05-1996',
     },
     {
-      id: '105',
+      id: '103',
       transactionId: '5252968574',
-      clientName: 'Anu',
+      clientName: 'AL-SHOQAIQ',
       address: {
         addressLine1: 'No 63',
         addressLine2: 'South Street',
@@ -107,7 +107,7 @@ export class UserViewComponent implements OnInit {
         pincode: '616002'
       },
       amount: '7000',
-      paymentStatus: 'Draft',
+      paymentStatus: 'IN PROGRESS',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '18-12-1996',
@@ -116,12 +116,12 @@ export class UserViewComponent implements OnInit {
   public ColumnMode = ColumnMode;
   public selectStatus: any = [
     {name : 'All', value: ''},
-    {name : 'Downloaded', value: 'Downloaded'},
-    {name : 'Draft', value: 'Draft'},
-    {name : 'Paid', value: 'Paid'},
-    {name : 'Partial Payment', value: 'Partial Payment'},
-    {name : 'Past Due', value: 'Past Due'},
-    {name : 'Sent', value: 'Sent'}
+    {name : 'CLOSED', value: 'Closed'},
+    {name : 'IN PROGRESS', value: 'Inprogress'},
+    {name : 'ESCALATED', value: 'Escalated'},
+    {name : 'UNRESOLVED', value: 'Unresolved'},
+    {name : 'DUMMY', value: 'Dummy'},
+    {name : 'NOT IN SCOPE', value: 'Notinscope'}
     ];
 
   public selectedStatus = [];
@@ -135,7 +135,7 @@ export class UserViewComponent implements OnInit {
     {
       id: '101',
       transactionId: '5252525252',
-      clientName: 'Hari',
+      clientName: 'ALUPCO',
       address: {
         addressLine1: 'No 20',
         addressLine2: 'South Street',
@@ -143,16 +143,16 @@ export class UserViewComponent implements OnInit {
         state: 'TamilNadu',
         pincode: '600000'
       },
-      amount: '5000',
-      paymentStatus: 'Paid',
+      amount: '500',
+      paymentStatus: 'CLOSED',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '26-10-1996',
     },
     {
-      id: '102',
+      id: '104',
       transactionId: '5248451526',
-      clientName: 'Ram',
+      clientName: 'ALYAF',
       address: {
         addressLine1: 'No 10',
         addressLine2: 'West Street',
@@ -160,16 +160,16 @@ export class UserViewComponent implements OnInit {
         state: 'TamilNadu',
         pincode: '602025'
       },
-      amount: '10000',
-      paymentStatus: 'Partial Payment',
+      amount: '1000',
+      paymentStatus: 'IN PROGRESS',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '26-1-1997',
     },
     {
-      id: '103',
+      id: '105',
       transactionId: '5252789634',
-      clientName: 'Priya',
+      clientName: 'ARAKAN PAPER CUPS',
       address: {
         addressLine1: 'No 23',
         addressLine2: 'Middle Street',
@@ -177,16 +177,16 @@ export class UserViewComponent implements OnInit {
         state: 'TamilNadu',
         pincode: '600081'
       },
-      amount: '25000',
-      paymentStatus: 'Past Due',
+      amount: '2500',
+      paymentStatus: 'ESCALATED',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '02-07-1996',
     },
     {
-      id: '104',
+      id: '101',
       transactionId: '5252354785',
-      clientName: 'Kumar',
+      clientName: 'ALUPCO',
       address: {
         addressLine1: 'No 125',
         addressLine2: 'Main Road',
@@ -195,15 +195,15 @@ export class UserViewComponent implements OnInit {
         pincode: '600063'
       },
       amount: '3000',
-      paymentStatus: 'Sent',
+      paymentStatus: 'CLOSED',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '06-05-1996',
     },
     {
-      id: '105',
+      id: '103',
       transactionId: '5252968574',
-      clientName: 'Anu',
+      clientName: 'AL-SHOQAIQ',
       address: {
         addressLine1: 'No 63',
         addressLine2: 'South Street',
@@ -212,7 +212,7 @@ export class UserViewComponent implements OnInit {
         pincode: '616002'
       },
       amount: '7000',
-      paymentStatus: 'Draft',
+      paymentStatus: 'IN PROGRESS',
       paymentType: 'Credit Card',
       orderStatus: 'Processing',
       orderDate: '18-12-1996',

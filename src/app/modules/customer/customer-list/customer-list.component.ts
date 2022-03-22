@@ -62,7 +62,7 @@ export class CustomerListComponent implements OnInit {
     }
   
   ];
-  public selectedOption = 10;
+ public selectedOption = 10;
  public ColumnMode = ColumnMode;
  public temp = [];
  public previousStatusFilter = '';

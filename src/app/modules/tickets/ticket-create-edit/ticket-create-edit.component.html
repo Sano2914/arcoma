@@ -1,0 +1,203 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+      <!-- <h2 class="mb-2">Tickets</h2> -->
+      <section class="app-user-edit">
+        <div class="card">
+          <div class="card-body">
+            <div>
+              <h4 (click)="back()" class="text-primary font-weight-bolder pointer d-inline"><i data-feather="arrow-left" [class]="'text-primary'" [size]="22"></i> Back </h4>
+              <h2 class="my-1"><strong>{{ headText }}</strong></h2>
+            </div>
+            <form [formGroup]="form" (ngSubmit)= "onSubmit()">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="customerName">Customer Name
+                      <span class="required-asterisk" [ngStyle]= "{'color':'red','font-size': '20px'}">*</span>
+                    </label>
+                    <input type="text" class="form-control" placeholder="Name" required
+                      [(ngModel)]="ticketData.customerName" formControlName="customerName">
+                    <div *ngIf="form.get('customerName').hasError('required') && form.get('customerName').touched"
+                      class="form-control-feedback" [ngStyle]= "{'color':'red'}">Enter the Customer Name</div>
+                  </div>
+                </div>
+  
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="category">Category
+                      <span class="required-asterisk" [ngStyle]= "{'color':'red','font-size': '20px'}">*</span>
+                    </label>
+                    <input type="text" class="form-control" placeholder="category"
+                      [(ngModel)]="ticketData.category" formControlName="category" [readonly]="readMode">
+                    <div *ngIf="form.get('category').hasError('required') && form.get('category').touched"
+                      class="form-control-feedback" [ngStyle]= "{'color':'red'}">Enter the Category</div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="subcategory">Sub Category
+                        <span class="required-asterisk" [ngStyle]= "{'color':'red','font-size': '20px'}">*</span>
+                      </label>
+                      <input type="text" class="form-control" placeholder="subcategory"
+                        [(ngModel)]="ticketData.subcategory" formControlName="subcategory" [readonly]="readMode">
+                      <div *ngIf="form.get('subcategory').hasError('required') && form.get('subcategory').touched"
+                        class="form-control-feedback" [ngStyle]= "{'color':'red'}">Enter the Sub-Category</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="user">User
+                        <span class="required-asterisk" [ngStyle]= "{'color':'red','font-size': '20px'}">*</span>
+                      </label>
+                      <input type="text" class="form-control" placeholder="user"
+                        [(ngModel)]="ticketData.user" formControlName="user" [readonly]="readMode">
+                      <div *ngIf="form.get('user').hasError('required') && form.get('user').touched"
+                        class="form-control-feedback" [ngStyle]= "{'color':'red'}">Enter the User</div>
+                    </div>
+                  </div>
+  
+                <div class="col-md-4">
+                  <div class="form-group">
+                  <label for="status">Status
+                    <span class="required-asterisk" [ngStyle]= "{'color':'red','font-size': '20px'}">*</span>
+                  </label>
+                    <select class="form-control" [(ngModel)]="ticketData.status" formControlName="status" id="status">
+                        <option value="status"> </option>
+                        <option value="status">In Progress</option>
+                        <option value="status">Closed</option>
+                        <option value="status">Abandoned</option>
+                        <option value="status">Escalated</option>
+                    </select>
+                  <div *ngIf="form.get('status').hasError('required') && form.get('status').touched"
+                    class="form-control-feedback" [ngStyle]= "{'color':'red'}">Select The Status</div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                    <label for="priority">Priority
+                      <span class="required-asterisk" [ngStyle]= "{'color':'red','font-size': '20px'}">*</span>
+                    </label>
+                      <select class="form-control" [(ngModel)]="ticketData.priority" formControlName="priority" id="priority">
+                          <option value="priority"> </option>
+                          <option value="priority">High</option>
+                          <option value="priority">Medium</option>
+                          <option value="priority">Low</option>
+                      </select>
+                    <div *ngIf="form.get('priority').hasError('required') && form.get('priority').touched"
+                      class="form-control-feedback" [ngStyle]= "{'color':'red'}">Select The Priority</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label for="criticality">Criticality
+                      <span class="required-asterisk" [ngStyle]= "{'color':'red','font-size': '20px'}">*</span>
+                    </label>
+                      <select class="form-control" [(ngModel)]="ticketData.criticality" formControlName="criticality" id="criticality">
+                          <option value="criticality"> </option>
+                          <option value="criticality">Highly Critical</option>
+                          <option value="criticality">High</option>
+                          <option value="criticality">Medium</option>
+                          <option value="criticality">Low</option>
+                      </select>
+                    <div *ngIf="form.get('criticality').hasError('required') && form.get('criticality').touched"
+                      class="form-control-feedback" [ngStyle]= "{'color':'red'}">Select The Criticality</div>
+                    </div>
+                  </div>
+                  
+                <div class="col-md-8">
+                  <div class="form-group">
+                  <label for="editor">Description</label>
+                  <ckeditor [editor]="Editor" [data]="data"></ckeditor>
+                  <!-- Quill Editor is Vuexy Inbuilt That Support Dark Mode, Use CK or Quill-->
+                  <quill-editor [(ngModel)]="ticketData.description" [modules]="{ syntax: true, toolbar: [['code-block']] }"
+                    ><div quill-editor-toolbar>
+                      <span class="ql-formats">
+                        <button class="ql-bold" [title]="'Bold'"></button>
+                        <button class="ql-italic" [title]="'italic'"></button>
+                        <button class="ql-underline" [title]="'underline'"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <select class="ql-align" [title]="'Alignment'">
+                          <option selected></option>
+                          <option value="center"></option>
+                          <option value="right"></option>
+                          <option value="justify"></option>
+                        </select>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-list" value="ordered" type="button"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-link" value="ordered" type="button"></button>
+                        <button class="ql-image" value="ordered" type="button"></button>
+                        <button class="ql-video" value="ordered" type="button"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-formula" value="ordered" type="button"></button>
+                        <button class="ql-code-block" value="ordered" type="button"></button>
+                      </span>
+                      <span class="ql-formats">
+                        <button class="ql-clean" value="ordered" type="button"></button>
+                      </span>
+                    </div>
+                  </quill-editor>
+                  </div>
+                </div>
+  
+                <!-- <div class="col-md-12">
+                  <label for="customerImage">Customer Images</label>
+                  <div class="form-group media-body mt-50">
+                    <div class="col-12 d-flex mt-1 px-0" *ngIf="!readMode">
+                      <label class="btn btn-primary mr-75 mb-0" for="pictures">
+                        <span class="d-none d-sm-block">Add Images</span>
+                        <input
+                          class="form-control"
+                          type="file"
+                          id="pictures"
+                          hidden
+                          accept="image/png, image/jpeg, image/jpg"
+                          (change)="onSelectFile($event)"
+                          multiple
+                        />
+                        <span class="d-block d-sm-none">
+                          <i class="mr-0" data-feather="edit"></i>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div> -->
+  
+                <!-- <div class="col-md-12 media my-2 ml-2">
+                  <div class="customerImg" *ngFor='let url of urls; let i = index;'>
+                    <img [src]="url" height="200" width="200">
+                    <button class="btn btn-icon btn-outline-danger" rippleEffect (click)="removeImage(i)">
+                      <i class="mr-0" data-feather="trash-2"></i>
+                    </button>
+                  </div>
+                </div> -->
+                
+                <div class="col-12 d-flex flex-sm-row flex-column mt-2" *ngIf="!readMode">
+                  <button type="button" [disabled]="form.invalid" class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1"
+                    (click)="onSubmit()" rippleEffect>
+                    Save Changes
+                  </button>
+  
+                  <button (click)="resetForm()" class="btn btn-outline-secondary" rippleEffect>
+                    Reset
+                  </button>
+  
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  
+  
+
