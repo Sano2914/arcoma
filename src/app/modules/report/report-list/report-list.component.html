@@ -1,0 +1,61 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+      <app-content-header [contentHeader]="contentHeader"></app-content-header>
+      
+      <section class="users-list-wrapper">
+        <!-- users filter start -->
+      <div class="card">
+        <h5 class="card-header">Search Filter</h5>
+        <div class="card-body">
+          <div class="users-list-filter">
+            <form>
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <fieldset class="form-group">
+                    <ng-select [items]="selectcustomerName" [(ngModel)]="selectedcustomerName" name="selectedcustomerName" bindLabel="name" placeholder="Select customerName" (change)="filterBycustomerName($event)"></ng-select>
+                  </fieldset>
+                </div>
+                <div class="col-12 col-md-4">
+                  <fieldset class="form-group">
+                    <ng-select [items]="selectticketStatus" [(ngModel)]="selectedticketStatus" name="selectedticketStatus" bindLabel="name" placeholder="Select ticketStatus" (change)="filterByticketStatus($event)"></ng-select>
+                  </fieldset>
+                </div>
+                <div class="col-12 col-md-4">
+                  <fieldset class="form-group">
+                    <ng-select [items]="selectuserName" [(ngModel)]="selecteduserName" name="selecteduserName" bindLabel="name" placeholder="Select User Name" (change)="filterByuserName($event)"></ng-select>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <fieldset class="form-group">
+                    <ng-select [items]="selectcategory" [(ngModel)]="selectedcategory" name="selectedcategory" bindLabel="name" placeholder="Select Category" (change)="filterBycategory($event)"></ng-select>
+                  </fieldset>
+                </div>
+                <div class="col-12 col-md-4">
+                  <fieldset class="form-group">
+                    <ng-select [items]="selectstartDate" [(ngModel)]="selectedstartDate" name="selectedstartDate" bindLabel="name" placeholder="Select Start Date" (change)="filterBystartDate($event)"></ng-select>
+                  </fieldset>
+                </div>
+                <div class="col-12 col-md-4">
+                  <fieldset class="form-group">
+                    <ng-select [items]="selectendDate" [(ngModel)]="selectedendDate" name="selectedendDate" bindLabel="name" placeholder="Select End Date" (change)="filterByendDate($event)"></ng-select>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+            <button class="btn btn-primary ml-10 right" rippleEffect (click)="onSubmit()">
+                <i data-feather="plus" class="d-sm-none d-inline-block mr-0 mr-sm-1"></i
+                ><span class="d-none d-sm-inline-block right">Download</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- users filter end -->
+      </section>
+      
+    </div>
+  </div>
+
+
+

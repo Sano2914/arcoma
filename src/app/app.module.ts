@@ -28,6 +28,7 @@ import { UserModule } from './modules/user/user.module';
 import { CustomerModule } from './modules/customer/customer.module';
 // import { SettingsModule } from './modules/settings/settings.module';
 import { TicketsModule } from './modules/tickets/tickets.module';
+import { ReportModule } from './modules/report/report.module';
 
 const appRoutes: Routes = [
   {
@@ -65,6 +66,10 @@ const appRoutes: Routes = [
   {
     path: 'tickets',
     loadChildren: () => TicketsModule
+  },
+  {
+    path: 'report',
+    loadChildren: () => ReportModule
   },
   {
     path: '',

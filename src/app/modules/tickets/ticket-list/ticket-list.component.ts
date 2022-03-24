@@ -77,113 +77,113 @@ export class TicketListComponent implements OnInit {
   
   ];
   public selectedOption = 10;
- public ColumnMode = ColumnMode;
- public temp = [];
- public previousStatusFilter = '';
+  public ColumnMode = ColumnMode;
+  public temp = [];
+  public previousStatusFilter = '';
 
- public selectAvailability: any = [
-  { name: 'All', value: '' },
-  { name: 'High', value: 'high' },
-  { name: 'Medium', value: 'medium' },
-  { name: 'Low', value: 'low'}
-];
+  public selectAvailability: any = [
+    { name: 'All', value: '' },
+    { name: 'High', value: 'high' },
+    { name: 'Medium', value: 'medium' },
+    { name: 'Low', value: 'low'}
+  ];
 
-public selectedAvailability = [];
- public searchValue = '';
+  public selectedAvailability = [];
+  public searchValue = '';
 
- @ViewChild(DatatableComponent) table: DatatableComponent;
+  @ViewChild(DatatableComponent) table: DatatableComponent;
 
- private tempData = [
-  {
-     ticketid: '2022',
-     customerName: 'Asfaq',
-     category: 'check',
-     subcategory: 'enter',
-     description: 'Type here',
-     user: 'user1',
-     status: 'Closed',
-     priority: 'Medium',
-     criticality: 'High'
-   },
-   {
-    ticketid: '2021',
-    customerName: 'shams',
-    category: 'check',
-    subcategory: 'enter',
-    description: 'Type here',
-    user: 'user1',
-    status: 'In Progess',
-    priority: 'High',
-    criticality: 'Highly critical'
-  },
-  {
-    ticketid: '2085',
-    customerName: 'Omar',
-    category: 'check',
-    subcategory: 'enter',
-    description: 'Type here',
-    user: 'user1',
-    status: 'Escalated',
-    priority: 'Low',
-    criticality: 'Low'
-  },
-  {
-    ticketid: '2057',
-    customerName: 'Immam',
-    category: 'check',
-    subcategory: 'enter',
-    description: 'Type here',
-    user: 'user1',
-    status: 'Abandoned',
-    priority: 'Medium',
-    criticality: 'Medium'
-  },
-  {
-    ticketid: '2051',
-    customerName: 'shams',
-    category: 'check',
-    subcategory: 'enter',
-    description: 'Type here',
-    user: 'user1',
-    status: 'In Progress',
-    priority: 'High',
-    criticality: 'High'
-  },
-];
-private _unsubscribeAll: Subject<any>;
+  private tempData = [
+    {
+      ticketid: '2022',
+      customerName: 'Asfaq',
+      category: 'check',
+      subcategory: 'enter',
+      description: 'Type here',
+      user: 'user1',
+      status: 'Closed',
+      priority: 'Medium',
+      criticality: 'High'
+    },
+    {
+      ticketid: '2021',
+      customerName: 'shams',
+      category: 'check',
+      subcategory: 'enter',
+      description: 'Type here',
+      user: 'user1',
+      status: 'In Progess',
+      priority: 'High',
+      criticality: 'Highly critical'
+    },
+    {
+      ticketid: '2085',
+      customerName: 'Omar',
+      category: 'check',
+      subcategory: 'enter',
+      description: 'Type here',
+      user: 'user1',
+      status: 'Escalated',
+      priority: 'Low',
+      criticality: 'Low'
+    },
+    {
+      ticketid: '2057',
+      customerName: 'Immam',
+      category: 'check',
+      subcategory: 'enter',
+      description: 'Type here',
+      user: 'user1',
+      status: 'Abandoned',
+      priority: 'Medium',
+      criticality: 'Medium'
+    },
+    {
+      ticketid: '2051',
+      customerName: 'shams',
+      category: 'check',
+      subcategory: 'enter',
+      description: 'Type here',
+      user: 'user1',
+      status: 'In Progress',
+      priority: 'High',
+      criticality: 'High'
+    },
+  ];
+  private _unsubscribeAll: Subject<any>;
 
   constructor(
-    private_ticketsService: TicketsService,
-    private _coreSidebarService: CoreSidebarService,
-   private _coreConfigService: CoreConfigService,
-   private router: Router) {
-    this._unsubscribeAll = new Subject();
+      private_ticketsService: TicketsService,
+      private _coreSidebarService: CoreSidebarService,
+      private _coreConfigService: CoreConfigService,
+      private router: Router) {
+      this._unsubscribeAll = new Subject();
     }
 
-  ngOnInit(): void {
-    this.contentHeader = {
-      headerTitle: 'Tickets',
-      breadcrumb: {
-        type: '',
-        links: [
-          // {
-          //   name: 'Home',
-          //   isLink: true,
-          //   link: '/'
-          // },
-          // {
-          //   name: 'eCommerce',
-          //   isLink: true,
-          //   link: '/'
-          // },
-          {
-            name: 'List',
-            isLink: false
-          }
-        ]
-      }
-    };
-  }
+    ngOnInit(): void {
+      this.contentHeader = {
+        headerTitle: 'Tickets',
+        breadcrumb: {
+          type: '',
+          links: [
+            // {
+            //   name: 'Home',
+            //   isLink: true,
+            //   link: '/'
+            // },
+            // {
+            //   name: 'eCommerce',
+            //   isLink: true,
+            //   link: '/'
+            // },
+            {
+              name: 'List',
+              isLink: false
+            }
+          ]
+        }
+      };
+    }
   filterUpdate(event) {
     this.selectedAvailability = this.selectAvailability[0];
  

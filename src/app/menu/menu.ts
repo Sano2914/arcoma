@@ -74,6 +74,14 @@ export const menu: CoreMenu[] = [
       },
     ]
   },
+  {
+    id: 'Report',
+    title: 'Report',
+    // translate: 'MENU.DASHBOARD',
+    type: 'item',
+    icon: 'file-text',
+    url: 'report/list',
+  }
   // {
   //   id: 'Settings',
   //   title: 'Settings',
