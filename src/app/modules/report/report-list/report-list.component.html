@@ -34,12 +34,14 @@
                 </div>
                 <div class="col-12 col-md-4">
                   <fieldset class="form-group">
-                    <ng-select [items]="selectstartDate" [(ngModel)]="selectedstartDate" name="selectedstartDate" bindLabel="name" placeholder="Select Start Date" (change)="filterBystartDate($event)"></ng-select>
+                    <span class="title">Date:</span>
+                    <!-- <ng2-flatpickr [config]="DateRangeOptions" name="DateRange"></ng2-flatpickr> -->
                   </fieldset>
                 </div>
                 <div class="col-12 col-md-4">
                   <fieldset class="form-group">
-                    <ng-select [items]="selectendDate" [(ngModel)]="selectedendDate" name="selectedendDate" bindLabel="name" placeholder="Select End Date" (change)="filterByendDate($event)"></ng-select>
+                    <span class="title">Date:</span>
+                    <!-- <ng2-flatpickr [config]="DateRangeOptions" name="DateRange"></ng2-flatpickr> -->
                   </fieldset>
                 </div>
               </div>

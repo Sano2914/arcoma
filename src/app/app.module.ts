@@ -18,6 +18,7 @@ import { CoreSidebarModule, CoreThemeCustomizerModule } from '@core/components';
 
 import { coreConfig } from 'app/app-config';
 
+
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { ProductsModule } from './modules/products/products.module';
@@ -29,6 +30,7 @@ import { CustomerModule } from './modules/customer/customer.module';
 // import { SettingsModule } from './modules/settings/settings.module';
 import { TicketsModule } from './modules/tickets/tickets.module';
 import { ReportModule } from './modules/report/report.module';
+import { CardSnippetModule } from '@core/components/card-snippet/card-snippet.module';
 
 const appRoutes: Routes = [
   {
@@ -107,6 +109,7 @@ const appRoutes: Routes = [
     CoreCommonModule,
     CoreSidebarModule,
     CoreThemeCustomizerModule,
+    CardSnippetModule,
 
     // App modules
     LayoutModule,

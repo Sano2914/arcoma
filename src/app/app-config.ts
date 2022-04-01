@@ -18,7 +18,7 @@ export const coreConfig: CoreConfig = {
   app: {
     appName     : 'Arcoma',                                        // App Name
     appTitle    : 'Arcoma', // App Title
-    appLogoImage: 'assets/images/logo/logo.png',                  // App Logo
+    appLogoImage: 'assets/images/logo/corvanta_v.png',                  // App Logo
     appLanguage : 'en',                                           // App Default Language (en, fr, de, pt etc..)
   },
   layout: {

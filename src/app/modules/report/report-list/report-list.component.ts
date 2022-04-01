@@ -29,6 +29,15 @@ export class ReportListComponent implements OnInit {
   public previousstartDateFilter = '';
   public previousendDateFilter = '';
 
+  // Ng2-Flatpickr Options
+  // public DateRangeOptions = {
+  //   altInput: true,
+  //   mode: 'single',
+  //   altInputClass: 'form-control flat-picker flatpickr-input invoice-edit-input',
+  //   defaultDate: ['2020-05-01'],
+  //   altFormat: 'Y-n-j'
+  // };
+
   public selectcustomerName: any = [
     {name : 'All', value: ''},
     {name : 'Asfaq', value: 'asfaq'},
